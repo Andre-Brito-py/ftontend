@@ -1,0 +1,66 @@
+.public-menu {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.store-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.store-info h1 {
+  margin: 0;
+}
+
+.store-banner {
+  max-height: 120px;
+  border-radius: 8px;
+}
+
+.categories-section, .foods-section {
+  margin-bottom: 24px;
+}
+
+.categories-grid, .foods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.category-card, .food-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fff;
+}
+
+.category-card img, .food-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.category-name, .food-name {
+  font-weight: 600;
+}
+
+.food-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+.food-price {
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.error {
+  color: #b00020;
+}

@@ -1,0 +1,274 @@
+/* Importar sistema de design */
+@import url('../design-system.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Estilos específicos do painel admin */
+body {
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] body {
+    background: linear-gradient(135deg, var(--surface-primary) 0%, var(--surface-secondary) 100%);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-300), transparent);
+    margin: var(--spacing-lg) 0;
+}
+
+.app-content {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--gray-50);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .app-content {
+    background-color: var(--surface-primary);
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+/* Layout principal do admin */
+.admin-main {
+    flex: 1;
+    padding: var(--spacing-xl);
+    background-color: var(--white);
+    margin: var(--spacing-lg);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-sm);
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .admin-main {
+    background-color: var(--surface-secondary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cabeçalho das páginas */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: var(--border-width) solid var(--gray-200);
+}
+
+.page-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.page-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--gray-600);
+    margin-top: var(--spacing-xs);
+}
+
+/* Cards do admin */
+.admin-card {
+    background: var(--white);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: var(--border-width) solid var(--gray-200);
+    overflow: hidden;
+    transition: var(--transition-normal);
+}
+
+[data-theme="dark"] .admin-card {
+    background: var(--surface-tertiary);
+    border-color: var(--border-primary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.admin-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.admin-card-header {
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    color: var(--white);
+}
+
+.admin-card-body {
+    padding: var(--spacing-xl);
+}
+
+/* Formulários do admin */
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.form-label {
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-700);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-input {
+    padding: var(--spacing-md);
+    border: var(--border-width) solid var(--gray-300);
+    border-radius: var(--border-radius-lg);
+    font-size: var(--font-size-base);
+    transition: var(--transition-fast);
+    background-color: var(--white);
+}
+
+[data-theme="dark"] .form-input {
+    background-color: var(--surface-tertiary);
+    border-color: var(--border-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-input:focus {
+    border-color: var(--primary-400);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Tabelas do admin */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .admin-table {
+    background: var(--surface-tertiary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.admin-table th {
+    background: var(--gray-100);
+    padding: var(--spacing-lg);
+    text-align: left;
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-700);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+[data-theme="dark"] .admin-table th {
+    background: var(--surface-primary);
+    color: var(--text-secondary);
+}
+
+.admin-table td {
+    padding: var(--spacing-lg);
+    border-top: var(--border-width) solid var(--gray-200);
+    color: var(--gray-800);
+}
+
+[data-theme="dark"] .admin-table td {
+    border-top-color: var(--border-primary);
+    color: var(--text-primary);
+}
+
+.admin-table tr:hover {
+    background-color: var(--gray-50);
+}
+
+[data-theme="dark"] .admin-table tr:hover {
+    background-color: var(--surface-secondary);
+}
+
+/* Status badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-success {
+    background-color: var(--success-light);
+    color: var(--success-color);
+}
+
+.status-warning {
+    background-color: var(--warning-light);
+    color: var(--warning-color);
+}
+
+.status-error {
+    background-color: var(--error-light);
+    color: var(--error-color);
+}
+
+.status-info {
+    background-color: var(--info-light);
+    color: var(--info-color);
+}
+
+/* Responsividade do admin */
+@media (max-width: 768px) {
+    .app-content {
+        flex-direction: column;
+    }
+    
+    .admin-main {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-lg);
+    }
+    
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+    
+    .admin-table {
+        font-size: var(--font-size-sm);
+    }
+    
+    .admin-table th,
+    .admin-table td {
+        padding: var(--spacing-sm);
+    }
+}

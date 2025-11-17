@@ -1,0 +1,15 @@
+/* Overrides leves para Tabler via SCSS */
+:root {
+  /* Harmonizar cor de borda com nosso design system, se existir */
+  --tblr-border-color: var(--border-primary, #e9ecef);
+}
+
+/* Espaçamento padrão em containers principais */
+.page-body {
+  padding-top: 1rem;
+}
+
+/* Ajuste visual do container principal */
+.app-content {
+  padding: 1rem;
+}

@@ -1,0 +1,15 @@
+// Overrides leves para complementar o CSS do Tabler
+// (mantendo o import do CSS já compilado em main.jsx)
+
+:root {
+  /* Paleta básica usada nos componentes customizados */
+  --primary-color: #0ea5e9;
+  --secondary-color: #64748b;
+  --success-color: #22c55e;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+}
+
+.admin-dashboard .card-title {
+  letter-spacing: .2px;
+}

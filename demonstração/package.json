@@ -1,0 +1,24 @@
+{
+  "name": "demonstracao",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5174"
+  },
+  "dependencies": {
+    "apexcharts": "^5.3.6",
+    "react": "^18.3.1",
+    "react-apexcharts": "^1.8.0",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1",
+    "react-toastify": "^11.0.5"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.79.3",
+    "vite": "^5.4.0"
+  }
+}

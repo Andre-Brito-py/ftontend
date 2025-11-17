@@ -1,0 +1,15 @@
+.admin-dashboard .page-title {
+  font-weight: 600;
+}
+
+.admin-dashboard .card {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.admin-dashboard .form-label {
+  font-weight: 500;
+}
+
+.admin-dashboard .apexcharts-canvas {
+  width: 100% !important;
+}

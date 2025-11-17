@@ -1,0 +1,185 @@
+:root {
+  /* Pequenas adaptações visuais */
+  --tblr-border-radius: 8px;
+  /* Branding Zappy! */
+  --brand-primary: #ff7a00; /* Laranja Zappy */
+  --brand-primary-contrast: #1f1f1f;
+  --sidebar-bg: linear-gradient(180deg, #fff7f0 0%, #ffffff 100%);
+  --sidebar-hover-bg: color-mix(in oklab, var(--brand-primary) 6%, white 94%);
+  --sidebar-active-bg: color-mix(in oklab, var(--brand-primary) 14%, white 86%);
+  /* Superfícies e texto (modo claro) */
+  --page-bg: #f6f8fb;
+  --navbar-bg: linear-gradient(90deg, #ffffff 0%, #fff7f0 100%);
+  --tblr-card-bg: #ffffff;
+  --tblr-body-color: #232323;
+  --tblr-muted: #667085;
+  --tblr-border-color: #e5e7eb;
+}
+
+.page-pretitle {
+  opacity: 0.8;
+}
+
+.ratio.bg-secondary-lt {
+  border: 1px dashed var(--tblr-border-color);
+}
+
+/* Sidebar moderna e limpa baseada no Tabler */
+.navbar-vertical {
+  position: fixed;
+  top: 56px; /* altura aproximada da navbar */
+  bottom: 0;
+  width: 280px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--tblr-border-color);
+  padding-top: 0.75rem;
+}
+
+.navbar-vertical .nav-link {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  border-radius: .5rem;
+  color: var(--tblr-muted);
+}
+.navbar-vertical .nav-link:hover {
+  background: var(--sidebar-hover-bg);
+  color: var(--tblr-body-color);
+}
+.navbar-vertical .nav-link.active {
+  background: var(--sidebar-active-bg);
+  color: var(--tblr-body-color);
+  box-shadow: inset 3px 0 0 0 var(--brand-primary);
+}
+.navbar-vertical .nav-link.active .icon {
+  color: var(--brand-primary);
+  color: var(--tblr-body-color);
+}
+.navbar-vertical .nav-link-icon .icon { width: 20px; height: 20px; }
+
+.navbar-vertical.navbar-vertical-collapsed { width: 76px; }
+.navbar-vertical.navbar-vertical-collapsed .nav-link-title { display: none; }
+
+.page-wrapper { transition: margin-left .2s ease; }
+
+/* Fundo geral da página para tema de delivery */
+.page { background: var(--page-bg); }
+
+/* Marca Zappy no topo */
+.brand-zappy {
+  display: flex;
+  align-items: center;
+}
+.brand-zappy .brand-logo {
+  height: 32px;
+  width: auto;
+  display: inline-block;
+}
+
+/* Navbar harmonizada com tema laranja */
+.navbar { background: var(--navbar-bg); }
+.navbar .nav-link:hover { color: var(--brand-primary); }
+.navbar .nav-link.active { color: var(--brand-primary); border-bottom: 2px solid var(--brand-primary); }
+.navbar .btn:hover { color: var(--brand-primary); }
+
+/* Rodapé da sidebar com identidade da loja */
+.sidebar-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--tblr-border-color);
+  padding: .75rem .5rem;
+  background: var(--tblr-card-bg);
+  border-radius: .5rem;
+}
+.sidebar-footer-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid var(--tblr-border-color);
+}
+.sidebar-footer-logo.placeholder { background: color-mix(in oklab, var(--brand-primary) 16%, white 84%); }
+.sidebar-footer-text { line-height: 1.1; }
+.sidebar-footer-name { font-weight: 600; color: var(--tblr-body-color); }
+.sidebar-footer-user { font-size: .8rem; color: var(--tblr-muted); }
+
+/* Dropzone moderna para upload de ícone */
+.dropzone {
+  position: relative;
+  border: 2px dashed var(--tblr-border-color);
+  border-radius: 12px;
+  background: var(--tblr-card-bg);
+  padding: 16px;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+.dropzone-hover {
+  border-color: var(--brand-primary);
+  background: color-mix(in oklab, var(--brand-primary) 12%, white 88%);
+}
+.dropzone .dz-instructions { color: var(--tblr-muted); }
+.dropzone .dz-preview img {
+  max-width: 100%;
+  max-height: 240px;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ===================== Modo Escuro ===================== */
+:root[data-theme='dark'] {
+  --brand-primary: #ff8a33;
+  --brand-primary-contrast: #ffffff;
+  --page-bg: #0f1216;
+  --navbar-bg: linear-gradient(90deg, #12161c 0%, #1a1f27 100%);
+  --sidebar-bg: linear-gradient(180deg, #12161c 0%, #1a1f27 100%);
+  --sidebar-hover-bg: color-mix(in oklab, var(--brand-primary) 8%, #12161c 92%);
+  --sidebar-active-bg: color-mix(in oklab, var(--brand-primary) 12%, #12161c 88%);
+  --tblr-card-bg: #161b22;
+  --tblr-body-color: #e8eaed;
+  --tblr-muted: #a1a7b0;
+  --tblr-border-color: #2a313a;
+}
+
+/* Ajustes de componentes no escuro */
+:root[data-theme='dark'] .navbar-vertical .nav-link.active {
+  box-shadow: inset 3px 0 0 0 var(--brand-primary);
+}
+:root[data-theme='dark'] .dropzone-hover {
+  background: color-mix(in oklab, var(--brand-primary) 10%, #161b22 90%);
+}
+
+/* Cards no modo escuro */
+:root[data-theme='dark'] .card {
+  background: var(--tblr-card-bg, #161b22) !important;
+  background-color: var(--tblr-card-bg, #161b22) !important;
+  border-color: var(--tblr-border-color, #2a313a) !important;
+  color: var(--tblr-body-color, #e8eaed) !important;
+}
+:root[data-theme='dark'] .page .card { background: var(--tblr-card-bg, #161b22) !important; }
+:root[data-theme='dark'] .card.card-sm,
+:root[data-theme='dark'] .row.row-cards .card {
+  background: var(--tblr-card-bg, #161b22) !important;
+  background-color: var(--tblr-card-bg, #161b22) !important;
+  border-color: var(--tblr-border-color, #2a313a) !important;
+}
+:root[data-theme='dark'] .card .card-header,
+:root[data-theme='dark'] .card .card-footer {
+  background-color: transparent;
+  border-color: var(--tblr-border-color, #2a313a);
+}
+:root[data-theme='dark'] .card .card-body {
+  background-color: transparent !important;
+  color: var(--tblr-body-color, #e8eaed) !important;
+}
+:root[data-theme='dark'] .bg-white,
+:root[data-theme='dark'] .bg-light,
+:root[data-theme='dark'] .card.bg-white {
+  background-color: var(--tblr-card-bg) !important;
+}
+:root[data-theme='dark'] .card .text-secondary { color: var(--tblr-muted, #a1a7b0) !important; }
+:root[data-theme='dark'] .text-muted { color: var(--tblr-muted, #a1a7b0) !important; }
+:root[data-theme='dark'] .card-title, 
+:root[data-theme='dark'] .card-subtitle { color: var(--tblr-body-color) !important; }

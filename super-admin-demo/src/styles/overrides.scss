@@ -1,0 +1,301 @@
+.page-title {
+  font-weight: 700;
+}
+.card-title {
+  font-weight: 600;
+}
+.navbar-vertical {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  padding-top: 80px; /* Espaço para a logo */
+}
+.page-wrapper {
+  margin-left: 280px;
+  padding-top: 1rem; /* Pequeno ajuste para o topo */
+}
+
+/* Custom styles to match admin demo */
+.page-pretitle {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+.table-vcenter th {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #6c757d;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.375rem 0.75rem;
+  border-radius: 50rem;
+}
+
+/* Badge roxo para Enterprise */
+.bg-purple {
+  background-color: #6f42c1 !important;
+  color: white !important;
+}
+
+.card-sm {
+  border: 1px solid #e9ecef;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.card-sm .card-body {
+  padding: 1.5rem;
+}
+
+.font-weight-medium {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.25rem;
+}
+
+.text-secondary {
+  color: #6c757d !important;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.fw-medium {
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Ajustes para o modo noturno */
+[data-bs-theme="dark"] .super-admin-logo span {
+  color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .navbar-vertical {
+  background-color: #1a1d21;
+}
+
+/* Ajustes para sidebar recolhida */
+.navbar-vertical-collapsed {
+  width: 76px !important;
+  padding-top: 80px;
+}
+
+.navbar-vertical-collapsed ~ .page-wrapper {
+  margin-left: 76px !important;
+}
+
+.navbar-vertical-collapsed .super-admin-logo {
+  left: 0.5rem !important;
+}
+
+.navbar-vertical-collapsed .super-admin-logo span {
+  display: none;
+}
+
+/* Estilos para botões de ação */
+.btn-white {
+  background-color: white;
+  border: 1px solid #e9ecef;
+  color: #495057;
+}
+
+.btn-white:hover {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+[data-bs-theme="dark"] .btn-white {
+  background-color: #2c3e50;
+  border-color: #34495e;
+  color: #ecf0f1;
+}
+
+[data-bs-theme="dark"] .btn-white:hover {
+  background-color: #34495e;
+}
+
+/* Estilos para input-icon */
+.input-icon {
+  position: relative;
+}
+
+.input-icon .form-control {
+  padding-left: 2.5rem;
+}
+
+.input-icon-addon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  pointer-events: none;
+}
+
+/* Melhorias de contraste para modo escuro */
+[data-bs-theme="dark"] {
+  /* Textos secundários com melhor contraste */
+  .text-secondary {
+    color: #adb5bd !important;
+  }
+  
+  /* Placeholders mais visíveis */
+  .form-control::placeholder {
+    color: #6c757d !important;
+    opacity: 1;
+  }
+  
+  /* Labels dos cards de estatísticas */
+  .card-body .font-weight-medium {
+    color: #ced4da !important;
+  }
+  
+  /* Headers da tabela */
+  .table thead th {
+    color: #e9ecef !important;
+  }
+  
+  /* Cabeçalho de seções */
+  .page-pretitle {
+    color: #adb5bd !important;
+  }
+  
+  /* Inputs e selects */
+  .form-control, .form-select {
+    color: #e9ecef !important;
+    background-color: #212529 !important;
+    border-color: #495057 !important;
+  }
+  
+  /* Cards */
+  .card {
+    background-color: #212529 !important;
+    border-color: #495057 !important;
+  }
+  
+  .card-header {
+    background-color: rgba(33, 37, 41, 0.8) !important;
+    border-bottom-color: #495057 !important;
+  }
+  
+  /* Tabela */
+  .table {
+    --bs-table-bg: #212529 !important;
+    --bs-table-border-color: #495057 !important;
+    --bs-table-color: #e9ecef !important;
+  }
+  
+  /* Dropdowns */
+  .dropdown-menu {
+    background-color: #212529 !important;
+    border-color: #495057 !important;
+  }
+  
+  .dropdown-item {
+    color: #e9ecef !important;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #495057 !important;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #212529 !important;
+    border-bottom-color: #495057 !important;
+  }
+  
+  /* Sidebar */
+  .navbar-vertical {
+    background-color: #1a1d21 !important;
+  }
+  
+  /* Botões */
+  .btn-white {
+    background-color: #343a40 !important;
+    border-color: #495057 !important;
+    color: #e9ecef !important;
+  }
+  
+  .btn-white:hover {
+    background-color: #495057 !important;
+    border-color: #6c757d !important;
+  }
+  
+  /* Links */
+  a.text-reset {
+    color: #e9ecef !important;
+  }
+  
+  a.text-reset:hover {
+    color: #ffffff !important;
+  }
+  
+  /* Status badges */
+  .badge-success {
+    background-color: #28a745 !important;
+    color: #ffffff !important;
+  }
+  
+  .badge-warning {
+    background-color: #ffc107 !important;
+    color: #000000 !important;
+  }
+  
+  .badge-danger {
+    background-color: #dc3545 !important;
+    color: #ffffff !important;
+  }
+  
+  .badge-secondary {
+    background-color: #6c757d !important;
+    color: #ffffff !important;
+  }
+  
+  /* Melhorar contraste do texto do sidebar */
+  .navbar-nav .nav-link {
+    color: #e9ecef !important;
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* Logo e título */
+  .super-admin-logo span {
+    color: #ffffff !important;
+  }
+  
+  /* Navbar brand */
+  .navbar-brand {
+    color: #ffffff !important;
+  }
+  
+  /* Melhorar contraste dos valores das estatísticas */
+  .text-secondary {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Melhorar contraste dos headers */
+  .table thead th,
+  .card-title,
+  .page-title {
+    color: #ffffff !important;
+  }
+}

@@ -1,0 +1,142 @@
+/* Estilo neutro, alinhado ao Tabler: sem gradientes e com cartões limpos */
+.admin-profile-page .page-header {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-profile-page .btn-list .btn {
+  border-radius: 8px;
+}
+
+.admin-profile-page .card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.admin-profile-page .card-title {
+  margin-bottom: 1rem;
+}
+
+.admin-profile-page .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.admin-profile-page .form-group .form-label {
+  font-weight: 600;
+}
+
+/* Grid de tiles inspirado no layout da imagem (Joomla dashboard) */
+.admin-profile-page .tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.admin-profile-page .tile {
+  background: var(--color-card, #ffffff);
+  border: 1px solid var(--color-border, #e5e7eb);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+  padding: 16px;
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.admin-profile-page .tile:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md, 0 4px 10px rgba(0,0,0,0.08));
+}
+
+.admin-profile-page .tile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.admin-profile-page .tile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--color-muted, #eef2f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.admin-profile-page .tile-title {
+  margin-left: 12px;
+  font-weight: 600;
+}
+
+.admin-profile-page .tile-add {
+  border: 1px solid var(--color-border, #e5e7eb);
+  background: var(--color-card, #ffffff);
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.admin-profile-page .tile-body {
+  color: var(--color-muted-text, #6b7280);
+  font-size: 0.875rem;
+}
+
+/* ------------------------------
+   Modo escuro (AdminProfile)
+   Aplica paleta consistente usando variáveis do design system
+------------------------------ */
+[data-theme="dark"] .admin-profile-page .page-header,
+.theme-dark .admin-profile-page .page-header {
+  border-bottom-color: var(--border-primary, #404040);
+}
+
+[data-theme="dark"] .admin-profile-page .card,
+.theme-dark .admin-profile-page .card {
+  background: var(--surface-secondary, #1a1a1a);
+  border-color: var(--border-primary, #404040);
+  box-shadow: var(--shadow-card, 0 1px 2px rgba(0,0,0,0.5));
+}
+
+[data-theme="dark"] .admin-profile-page .tile,
+.theme-dark .admin-profile-page .tile {
+  background: var(--surface-secondary, #1a1a1a);
+  border-color: var(--border-primary, #404040);
+  box-shadow: var(--shadow-card, 0 1px 2px rgba(0,0,0,0.5));
+}
+
+[data-theme="dark"] .admin-profile-page .tile:hover,
+.theme-dark .admin-profile-page .tile:hover {
+  box-shadow: var(--shadow-card, 0 2px 6px rgba(0,0,0,0.6));
+}
+
+[data-theme="dark"] .admin-profile-page .tile-icon,
+.theme-dark .admin-profile-page .tile-icon {
+  background: var(--neutral-700, #404040);
+}
+
+[data-theme="dark"] .admin-profile-page .tile-add,
+.theme-dark .admin-profile-page .tile-add {
+  background: var(--surface-tertiary, #262626);
+  border-color: var(--border-secondary, #525252);
+}
+
+[data-theme="dark"] .admin-profile-page .tile-body,
+[data-theme="dark"] .admin-profile-page .card .text-muted,
+[data-theme="dark"] .admin-profile-page .card .small.text-secondary,
+.theme-dark .admin-profile-page .tile-body,
+.theme-dark .admin-profile-page .card .text-muted,
+.theme-dark .admin-profile-page .card .small.text-secondary {
+  color: var(--text-secondary, #e5e5e5);
+}
