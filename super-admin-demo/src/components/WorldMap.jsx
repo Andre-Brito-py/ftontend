@@ -69,6 +69,19 @@ const WorldMap = ({ stores = [], onCountryClick }) => {
           }
         });
 
+        // Garantir que não há instância anterior e limpar conteúdo
+        if (mapInstance.current) {
+          try {
+            mapInstance.current.destroy();
+          } catch {}
+          mapInstance.current = null;
+        }
+        if (mapRef.current) {
+          mapRef.current.innerHTML = '';
+          mapRef.current.style.overflow = 'hidden';
+          mapRef.current.style.position = 'relative';
+        }
+
         // Criar o mapa
         mapInstance.current = new jsVectorMap({
           selector: mapRef.current,
@@ -198,12 +211,6 @@ const WorldMap = ({ stores = [], onCountryClick }) => {
           },
         });
 
-        // Limpar o mapa quando o componente for desmontado
-        return () => {
-          if (mapInstance.current) {
-            mapInstance.current.destroy();
-          }
-        };
       } catch (error) {
         console.error('Erro ao criar o mapa:', error);
         setMapError(true);
@@ -211,6 +218,20 @@ const WorldMap = ({ stores = [], onCountryClick }) => {
     };
 
     initializeMap();
+    // Cleanup correto quando dependências mudarem ou ao desmontar
+    return () => {
+      if (mapInstance.current) {
+        try {
+          mapInstance.current.destroy();
+        } catch {}
+        mapInstance.current = null;
+      }
+      if (mapRef.current) {
+        try {
+          mapRef.current.innerHTML = '';
+        } catch {}
+      }
+    };
   }, [stores, onCountryClick, isDarkMode]);
 
   // Se não há dados, mostrar mensagem apropriada
@@ -303,13 +324,16 @@ const WorldMap = ({ stores = [], onCountryClick }) => {
             </div>
           </div>
         ) : (
-          <div className="ratio ratio-16x9">
+          <div className="w-100 h-100">
             <div 
               ref={mapRef} 
               className="w-100 h-100 rounded"
               style={{
                 backgroundColor: isDarkMode ? 'var(--tblr-gray-900)' : 'var(--tblr-bg-surface)',
-                border: `1px solid var(--tblr-border-color)`
+                border: `1px solid var(--tblr-border-color)`,
+                overflow: 'hidden',
+                position: 'relative',
+                minHeight: '750px'
               }}
             ></div>
           </div>

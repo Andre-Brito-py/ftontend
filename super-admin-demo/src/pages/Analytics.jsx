@@ -465,19 +465,19 @@ const Analytics = () => {
                 </button>
               </div>
             </div>
-            <div className="card-body">
-              <div className="row">
-                <div className="col-lg-8">
+            <div className="card-body" style={{minHeight: '800px'}}>
+              <div className="row h-100">
+                <div className="col-lg-9 h-100">
                   <WorldMap 
                     stores={storesByCountry}
                     onCountryClick={handleCountryClick}
                     selectedCountry={selectedCountry}
                   />
                 </div>
-                <div className="col-lg-4">
-                  <div className="mb-4">
+                <div className="col-lg-3 h-100">
+                  <div className="mb-3 h-100 d-flex flex-column">
                     <h4 className="mb-3">Resumo por País</h4>
-                    <div className="list-group list-group-flush">
+                    <div className="list-group list-group-flush flex-grow-1" style={{overflowY: 'auto'}}>
                       {storesByCountry.map((country) => (
                         <div 
                           key={country.id}
@@ -507,55 +507,33 @@ const Analytics = () => {
                   </div>
                   
                   {selectedCountry && (
-                    <div className="card">
-                      <div className="card-header">
+                    <div className="card mt-auto">
+                      <div className="card-header py-2">
                         <h5 className="card-title mb-0">{selectedCountry.name}</h5>
                       </div>
-                      <div className="card-body">
-                        <div className="row g-3">
+                      <div className="card-body py-2">
+                        <div className="row g-2">
                           <div className="col-6">
                             <div className="text-muted small">Lojas</div>
-                            <div className="h4 mb-0">{selectedCountry.stores}</div>
+                            <div className="h5 mb-0">{selectedCountry.stores}</div>
                           </div>
                           <div className="col-6">
                             <div className="text-muted small">Usuários</div>
-                            <div className="h4 mb-0">{formatNumber(selectedCountry.users)}</div>
+                            <div className="h5 mb-0">{formatNumber(selectedCountry.users)}</div>
                           </div>
                           <div className="col-12">
                             <div className="text-muted small">Receita Total</div>
-                            <div className="h4 mb-0 text-success">
+                            <div className="h5 mb-0 text-success">
                               {formatCurrency(selectedCountry.revenue)}
                             </div>
                           </div>
                         </div>
                         
-                        <hr className="my-3" />
-                        
-                        <h6 className="mb-2">Regiões Principais</h6>
-                        <div className="list-group list-group-flush">
-                          {selectedCountry.regions.slice(0, 3).map((region, index) => (
-                            <div key={index} className="list-group-item px-0 py-2">
-                              <div className="d-flex justify-content-between">
-                                <div>
-                                  <div className="fw-bold">{region.name}</div>
-                                  <div className="small text-muted">
-                                    {region.cities.slice(0, 2).join(', ')}
-                                  </div>
-                                </div>
-                                <div className="text-end">
-                                  <div className="fw-bold">{region.stores}</div>
-                                  <div className="small text-muted">lojas</div>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                        
                         <button 
-                          className="btn btn-primary btn-sm w-100 mt-3"
+                          className="btn btn-primary btn-sm w-100 mt-2"
                           onClick={() => setShowCountryModal(true)}
                         >
-                          Ver Detalhes Completos
+                          Ver Detalhes
                         </button>
                       </div>
                     </div>
